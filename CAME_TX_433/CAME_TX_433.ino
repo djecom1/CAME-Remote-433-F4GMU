@@ -99,13 +99,13 @@ void RfTransmitt(char *codeString, unsigned int numberOfShipments)
 
     Serial.println();
 
-    for (int i = 0; i < numberOfShipments; i++) // посылку посылаем как и брелок - NS раза подряд.
+    for (int i = 0; i < numberOfShipments; i++)
     {
         digitalWrite(pinTX, HIGH);
         delayMicroseconds(Te);
-        digitalWrite(pinTX, LOW); // посылаем стартовый импульс
+        digitalWrite(pinTX, LOW);
         for (int j = 0; j < codeLength; j++) {
-            SendCameBit(codeUpdate[j]); // побитово перебираем и посылаем код
+            SendCameBit(codeUpdate[j]);д
         }
         delay(16);
     }
