@@ -105,7 +105,7 @@ void RfTransmitt(char *codeString, unsigned int numberOfShipments)
         delayMicroseconds(Te);
         digitalWrite(pinTX, LOW);
         for (int j = 0; j < codeLength; j++) {
-            SendCameBit(codeUpdate[j]);д
+            SendCameBit(codeUpdate[j]);
         }
         delay(16);
     }
