@@ -1,4 +1,4 @@
-#define pinTX 8
+#define pinTX 2
 
 #define CM_MAX_TE 450
 #define CM_MIN_TE 250
@@ -25,9 +25,9 @@ void setup()
     Serial.begin(9600);
     while (!Serial);
     pinMode(pinTX, OUTPUT);
-    pinMode(10, INPUT_PULLUP);
-    pinMode(11, INPUT_PULLUP);
-    pinMode(12, INPUT_PULLUP);
+    pinMode(5, INPUT_PULLUP);
+    pinMode(6, INPUT_PULLUP);
+    pinMode(7, INPUT_PULLUP);
 }
 
 void loop()
@@ -36,21 +36,21 @@ void loop()
     char *code2 = "110010000011"; // C83
     char *code3 = "110010000101"; // C85
 
-    PB10 = digitalRead(10);
-    PB11 = digitalRead(11);
-    PB12 = digitalRead(12);
+    PB10 = digitalRead(5);
+    PB11 = digitalRead(6);
+    PB12 = digitalRead(7);
     
     if (PB10 == LOW) {
       RfTransmitt(code1, 4);
     }
-    if (PB11 == LOW) {
+    else if (PB11 == LOW) {
       RfTransmitt(code2, 4);
     }
-    if (PB12 == LOW) {
+    else if (PB12 == LOW) {
       RfTransmitt(code3, 4);
     }
     
-    delay(2000); 
+    delay(200); 
 }
 
 void RfTransmitt(char *codeString, unsigned int numberOfShipments)
