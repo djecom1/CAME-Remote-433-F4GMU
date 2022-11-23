@@ -6,19 +6,9 @@
 #define CM_BITS24 24
 #define Te 320
 
-volatile byte level = 255;
-volatile unsigned long last;
-volatile unsigned long len;
-byte p_level;
-unsigned long p_len;
-unsigned long p_len_prev;
-
 int PB10 = 0;
 int PB11 = 0;
 int PB12 = 0;
-
-
-
 
 void setup()
 {
